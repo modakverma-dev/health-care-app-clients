@@ -1,0 +1,7 @@
+client-main/.vscode
+client-main/android
+.DS_Store
+client-main/ios
+client-main/.vscode
+client-main/node_modules
+client/node_modules
