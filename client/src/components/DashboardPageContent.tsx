@@ -17,8 +17,14 @@ const DashboardPageContent = ({
               key={index}
             >
               <div className="flex-1 mr-5">
-                <h1>Name: {data?.username}</h1>
-                <h1>Age: 19</h1>
+                <h1>Name: {data?.users?.username}</h1>
+                {data?.users?.dob && (
+                  <h1>
+                    Age:{" "}
+                    {new Date().getFullYear() - data?.users?.dob?.split("-")[0]}{" "}
+                    yrs
+                  </h1>
+                )}
                 <p className="font-light text-slate-600">
                   <span className="text-black font-bold"> Problem:</span> Lorem
                   ipsum dolor sit amet, consectetur adipisicing elit. Alias
@@ -39,7 +45,11 @@ const DashboardPageContent = ({
                 )}
               </div>
               {showDetails && (
-                <QRCodeSVG width={250} height={250} value={data?.tokenId} />
+                <QRCodeSVG
+                  width={250}
+                  height={250}
+                  value={data?.id?.toString()}
+                />
               )}
             </div>
           );
